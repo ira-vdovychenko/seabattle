@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<title>Sea Battle</title>
+		<link rel="stylesheet" href="src/style.css" />
+	</head>
+	<body>
+		<div class="app">
+			<div class="app-header">
+				<h1 class="app-title">Морський бій</h1>
+				 <!-- <span class="app-subtitle"
+					>Проект школы программирования
+					<a href="https://constcode.ru" class="app-link" target="_blank"
+						>ConstCode.ru</a
+					></span 
+				> -->
+				<p class="app-subtitle">
+					<span data-playerscount >0</span>
+					 гравців онлайн
+				</p>
+			</div>
+			<div class="app-body">
+				<div class="battlefield" data-side="player"></div>
+				<div class="app-menu">
+					<div class="app-actions" data-scene="preparation">
+						<button class="app-action" data-computer="simple" disabled>
+							Грати проти слабака
+						</button>
+						<button class="app-action" data-computer="middle" disabled>
+							Грати проти середнього
+						</button>
+						<button class="app-action" data-computer="hard" disabled>
+							Грати проти сильного
+						</button>
+						<button class="app-action" data-type="random" disabled>
+							Грати проти випадкового гравця
+						</button>
+						<button class="app-action" data-type="challenge" disabled>
+							Викликати на бій
+						</button>
+						<button class="app-action" data-type="takeChallenge" disabled>
+							Прийняти виклик
+						</button>
+						<button class="app-action" data-action="manually">
+							Розставити кораблі вручну
+						</button>
+						<button class="app-action" data-action="randomize">
+							Розставити кораблі рандомно
+						</button>
+					</div>
+
+					<div class="app-actions hidden" data-scene="computer">
+						<div class="battlefield-status">Ваш хід</div>
+						<button class="app-action" data-action="gaveup">Здатись</button>
+						<button class="app-action" data-action="again">Грати ще раз</button>
+					</div>
+					<div class="app-actions hidden" data-scene="online">
+						<div class="battlefield-status">Ваш хід</div>
+						<button class="app-action" data-action="gaveup">Здатись</button>
+						<button class="app-action" data-action="again">Грати ще раз</button>
+						
+					</div>
+				</div>
+				<div class="data-side" data-side="opponent"></div>
+			</div>
+			<div class="app-chat hidden">
+				<input class="app-chatInput" />
+				<div class="app-messages">
+					<div class="app-message">Ось повідомлення</div>
+					<div class="app-message">Ось повідомлення</div>
+					<div class="app-message">Ось повідомлення</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="src/additional.js"></script>
+		<script src="src/Mouse.js"></script>
+
+		<script src="src/Application.js"></script>
+		<script src="src/Scene.js"></script>
+
+		<script src="src/scenes/PreparationScene.js"></script>
+		<script src="src/scenes/ComputerScene.js"></script>
+		<script src="src/scenes/OnlineScene.js"></script>
+		
+		<script src="src/Battlefield.js"></script>
+		<script src="src/BattlefieldView.js"></script>
+
+		<script src="src/Ship.js"></script>
+		<script src="src/ShipView.js"></script>
+
+		<script src="src/Shot.js"></script>
+		<script src="src/ShotView.js"></script>
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="src/script.js"></script>
+	</body>
+</html>
